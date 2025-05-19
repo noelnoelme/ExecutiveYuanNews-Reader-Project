@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include ("partials/header") %>
-    <title>Post</title>
+    <title>筆記</title>
   </head>
   <body>
     <%- include ("partials/nav") %>
@@ -10,7 +10,7 @@
       <%- include ("partials/message") %>
       <form action="/profile/post" method="POST">
         <div class="form-group">
-          <label for="exampleforTitle">Title</label>
+          <label for="exampleforTitle">標題</label>
           <input
             name="title"
             type="text"
@@ -20,7 +20,7 @@
         </div>
         <br />
         <div class="form-group">
-          <label for="exampleforContent">Content</label>
+          <label for="exampleforContent">內容</label>
           <textarea
             class="form-control"
             id="exampleforContent"
@@ -28,7 +28,7 @@
             name="content"
           /></textarea>
         <br />
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">確認送出</button>
       </form>
     </main>
   </body>

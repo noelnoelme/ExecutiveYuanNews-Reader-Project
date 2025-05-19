@@ -10,7 +10,7 @@
       <form action="/auth/signup" method="POST">
         <%- include ("partials/message") %>
         <div class="form-group">
-          <label for="exampleUsername">Username</label>
+          <label for="exampleUsername">使用者名稱</label>
           <input
             name="name"
             type="text"
@@ -18,38 +18,38 @@
             id="exampleUsername"
             required
           />
-          <small class="form-text text-muted">Enter Full Name here</small>
+          <small class="form-text text-muted">請輸入使用者名稱</small>
         </div>
         <br />
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="exampleInputEmail1">Email</label>
           <input
             type="email"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
+            placeholder="輸入email"
             name="email"
             required
           />
           <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
+            >我們絕對不會與任何第三方分享您的電子郵件</small
           >
         </div>
         <br />
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="exampleInputPassword1">密碼</label>
           <input
             type="password"
             class="form-control"
             id="exampleInputPassword1"
-            placeholder="Password"
+            placeholder="輸入密碼"
             name="password"
             required
           />
         </div>
         <br />
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">註冊</button>
       </form>
     </main>
   </body>

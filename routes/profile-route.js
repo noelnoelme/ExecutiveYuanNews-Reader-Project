@@ -27,7 +27,7 @@ router.post("/post", authCheck, async (req, res) => {
     await newPost.save();
     res.status(200).redirect("/profile");
   } catch (err) {
-    req.flash("error_msg", "Both title and content are required.");
+    req.flash("error_msg", "欄位皆不得為空");
     res.redirect("/profile/post");
   }
 });
