@@ -33,6 +33,7 @@ body {
   border-radius: 4px;
   background: #f8f9fa;
   transition: all 0.2s;
+  color: #111111;
 }
 
 .font-btn:hover {
