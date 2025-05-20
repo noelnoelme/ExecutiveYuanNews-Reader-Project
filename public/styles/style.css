@@ -11,6 +11,7 @@
 body {
   font-size: 1rem; /* 預設 16px */
   transition: font-size 0.3s ease;
+  background-color: #fafafa;
 }
 
 .font-controls {
