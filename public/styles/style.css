@@ -27,7 +27,7 @@ body {
 }
 
 .font-btn {
-  padding: 4px 8px;
+  padding: 8px 12px;
   cursor: pointer;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -45,7 +45,6 @@ body {
   border-color: #007bff;
 }
 
-/* Navbar container */
 .navbar {
   background-color: #111111;
   color: white;
@@ -56,7 +55,6 @@ body {
   padding: 0.5rem 1rem;
 }
 
-/* Navbar brand */
 .navbar-brand {
   color: white;
   text-decoration: none;
@@ -68,7 +66,6 @@ body {
   color: #adb5bd;
 }
 
-/* Navbar toggler button */
 .navbar-toggler {
   display: none;
   background-color: transparent;
@@ -78,7 +75,6 @@ body {
   color: white;
 }
 
-/* Navbar menu container */
 .navbar-collapse {
   display: flex;
   flex-basis: auto;
@@ -86,7 +82,6 @@ body {
   align-items: center;
 }
 
-/* Navbar nav list */
 .navbar-nav {
   list-style: none;
   display: flex;
@@ -110,7 +105,6 @@ body {
   color: #adb5bd;
 }
 
-/* Navbar toggler icon */
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
@@ -121,7 +115,6 @@ body {
   background-position: center;
 }
 
-/* Hero Section */
 .hero-section {
   background: #f8f9fa;
   padding: 4rem 0;
@@ -171,7 +164,6 @@ body {
   background: #0056b3;
 }
 
-/* 登入頁主區塊 */
 .login-main {
   min-height: 80vh;
   display: flex;
@@ -180,7 +172,6 @@ body {
   background: #f8f9fa;
 }
 
-/* 登入表單 */
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -193,7 +184,6 @@ body {
   gap: 1.2rem;
 }
 
-/* 表單欄位 */
 .form-row {
   display: flex;
   flex-direction: column;
@@ -219,7 +209,6 @@ body {
   margin-top: 0.1rem;
 }
 
-/* 登入按鈕 */
 .btn-main {
   background: #007bff;
   color: #fff;
@@ -237,7 +226,6 @@ body {
   background: #0056b3;
 }
 
-/* 註冊頁主區塊 */
 .signup-main {
   min-height: 80vh;
   display: flex;
@@ -246,7 +234,6 @@ body {
   background: #f8f9fa;
 }
 
-/* 註冊表單 */
 .signup-form {
   width: 100%;
   max-width: 420px;
@@ -259,14 +246,12 @@ body {
   gap: 1.2rem;
 }
 
-/* 個人頁面容器 */
 .profile-container {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* 使用者資訊區塊 */
 .profile-section {
   background: #fff;
   border-radius: 1rem;
@@ -306,7 +291,6 @@ body {
   font-weight: 500;
 }
 
-/* 文章列表區塊 */
 .posts-section {
   padding: 2rem 0;
 }
@@ -366,7 +350,6 @@ body {
   color: #888;
 }
 
-/* 筆記頁主區塊 */
 .note-main {
   min-height: 80vh;
   display: flex;
@@ -374,8 +357,6 @@ body {
   justify-content: center;
   background: #f8f9fa;
 }
-
-/* 筆記表單 */
 .note-form {
   width: 100%;
   max-width: 480px;
@@ -387,8 +368,6 @@ body {
   flex-direction: column;
   gap: 1.2rem;
 }
-
-/* 表單欄位 */
 .form-row {
   display: flex;
   flex-direction: column;
