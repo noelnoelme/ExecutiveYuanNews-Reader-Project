@@ -13,7 +13,10 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  author: String,
+  author: {
+    type: String,
+    ref: "User",
+  },
 });
 
 module.exports = mongoose.model("Post", postSchema);

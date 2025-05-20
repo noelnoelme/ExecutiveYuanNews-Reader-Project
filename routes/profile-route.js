@@ -15,9 +15,25 @@ router.get("/", authCheck, async (req, res) => {
   let postFound = await Post.find({ author: req.user._id });
   res.render("profile", { user: req.user, posts: postFound });
 });
-router.get("/news", authCheck, (req, res) => {
-  res.render("news", { user: req.user });
+router.get("/news", authCheck, async (req, res) => {
+  const query = req.query.q ? req.query.q.trim() : "";
+
+  const searchCondition = query
+    ? {
+        $or: [
+          { title: { $regex: query, $options: "i" } },
+          { content: { $regex: query, $options: "i" } },
+        ],
+      }
+    : {};
+
+  let postAll = await Post.find(searchCondition)
+    .populate("author", "name email") // 加入 populate
+    .sort({ date: -1 }); // 按時間倒序
+
+  res.render("news", { user: req.user, posts: postAll, query });
 });
+
 router.get("/post", authCheck, (req, res) => {
   res.render("post", { user: req.user });
 });
