@@ -69,7 +69,7 @@ nodemon index.js
 - Express.js
 - EJS
 - MongoDB Atlas
-- Passport.js（本地/Google OAuth）
+- Passport.js
 - connect-flash
 - dotenv
 - RWD CSS（純手工）
