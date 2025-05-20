@@ -10,6 +10,8 @@ const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");
 const cookieSession = require("cookie-session");
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 mongoose
   .connect(process.env.DB_CONNECT, {

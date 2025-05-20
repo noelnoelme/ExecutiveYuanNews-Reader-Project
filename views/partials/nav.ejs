@@ -1,40 +1,48 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">行政院即時新聞閱讀器</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="/">首頁</a></li>
-        <% if (!user) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">登入</a>
-        </li>
-        <% } %> <% if (!user) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/signup">註冊</a>
-        </li>
-        <% } %> <% if (user) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logout">登出</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">帳號內容</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile/post">個人筆記</a>
-        </li>
-        <% } %>
-      </ul>
-    </div>
+<nav class="navbar">
+  <a class="navbar-brand" href="/">行政院即時新聞閱讀器</a>
+  <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" id="navbarMenu">
+    <ul class="navbar-nav">
+      <% if (!user) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/login">登入</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/signup">註冊</a>
+      </li>
+      <% } %> <% if (user) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile/news">即時新聞</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">帳號內容</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile/post">發表便利貼</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/logout">登出</a>
+      </li>
+      <% } %>
+    </ul>
   </div>
 </nav>
+<div class="font-controls">
+  <button class="font-btn" data-size="small">小</button>
+  <button class="font-btn" data-size="medium">中</button>
+  <button class="font-btn" data-size="large">大</button>
+</div>
+<script>
+  // RWD 選單切換
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelector(".navbar-toggler")
+      .addEventListener("click", function () {
+        document.querySelector(".navbar-collapse").classList.toggle("show");
+      });
+  });
+</script>
+<script src="/js/font-size.js"></script>

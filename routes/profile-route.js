@@ -15,7 +15,9 @@ router.get("/", authCheck, async (req, res) => {
   let postFound = await Post.find({ author: req.user._id });
   res.render("profile", { user: req.user, posts: postFound });
 });
-
+router.get("/news", authCheck, (req, res) => {
+  res.render("news", { user: req.user });
+});
 router.get("/post", authCheck, (req, res) => {
   res.render("post", { user: req.user });
 });

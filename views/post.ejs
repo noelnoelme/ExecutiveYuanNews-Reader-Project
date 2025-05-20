@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <%- include ("partials/header") %>
-    <title>筆記</title>
+    <title>便利貼</title>
   </head>
   <body>
     <%- include ("partials/nav") %>
-    <main style="padding: 3rem">
+    <main class="note-main">
       <%- include ("partials/message") %>
-      <form action="/profile/post" method="POST">
-        <div class="form-group">
+      <form action="/profile/post" method="POST" class="note-form">
+        <div class="form-row">
           <label for="exampleforTitle">標題</label>
           <input
             name="title"
             type="text"
-            class="form-control"
+            class="input"
             id="exampleforTitle"
+            required
           />
         </div>
-        <br />
-        <div class="form-group">
+        <div class="form-row">
           <label for="exampleforContent">內容</label>
           <textarea
-            class="form-control"
+            class="textarea"
             id="exampleforContent"
-            aria-describedby="emailHelp"
             name="content"
-          /></textarea>
-        <br />
-        <button type="submit" class="btn btn-primary">確認送出</button>
+            rows="6"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-main">確認送出</button>
       </form>
     </main>
   </body>

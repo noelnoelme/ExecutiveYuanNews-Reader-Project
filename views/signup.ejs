@@ -1,55 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <%- include ("partials/header") %>
     <title>註冊</title>
   </head>
   <body>
     <%- include ("partials/nav") %>
-    <main style="padding: 3rem">
-      <form action="/auth/signup" method="POST">
+    <main class="signup-main">
+      <form action="/auth/signup" method="POST" class="signup-form">
         <%- include ("partials/message") %>
-        <div class="form-group">
+        <div class="form-row">
           <label for="exampleUsername">使用者名稱</label>
           <input
             name="name"
             type="text"
-            class="form-control"
+            class="input"
             id="exampleUsername"
             required
           />
-          <small class="form-text text-muted">請輸入使用者名稱</small>
+          <small class="note">請輸入姓名或是暱稱</small>
         </div>
-        <br />
-        <div class="form-group">
+        <div class="form-row">
           <label for="exampleInputEmail1">Email</label>
           <input
             type="email"
-            class="form-control"
+            class="input"
             id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="輸入email"
             name="email"
             required
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >我們絕對不會與任何第三方分享您的電子郵件</small
-          >
+          <small class="note">我們絕對不會與任何第三方分享您的電子郵件</small>
         </div>
-        <br />
-        <div class="form-group">
+        <div class="form-row">
           <label for="exampleInputPassword1">密碼</label>
           <input
             type="password"
-            class="form-control"
+            class="input"
             id="exampleInputPassword1"
             placeholder="輸入密碼"
             name="password"
             required
           />
         </div>
-        <br />
-        <button type="submit" class="btn btn-primary">註冊</button>
+        <button type="submit" class="btn-main">註冊</button>
       </form>
     </main>
   </body>
