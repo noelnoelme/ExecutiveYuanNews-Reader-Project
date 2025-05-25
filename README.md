@@ -3,12 +3,13 @@
 # 專案簡介
 
 > 本專案提供一個簡單的即時新聞閱讀平台，使用者可註冊、登入，並能發表個人筆記。
-> 適合 Node.js/Express/MongoDB 學習者參考與練習。
+> 適合 Node.js/Express/MongoDB/API 串接 學習者參考與練習。
 
 ## 功能特色
 
 - 使用者註冊/登入/登出
 - ~~即時新聞瀏覽~~ (目前政府 API 掛掉了)
+- 台北市即時雨量
 - 個人筆記發表、瀏覽、搜尋 (API 串接功能替代方案)
 - RWD 響應式設計
 - 字體大小自訂並儲存於 Cookie
@@ -67,6 +68,7 @@ nodemon index.js
 
 - Node.js
 - Express.js
+- Axios
 - EJS
 - MongoDB Atlas
 - Passport.js

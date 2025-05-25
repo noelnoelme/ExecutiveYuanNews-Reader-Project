@@ -1,5 +1,5 @@
 <nav class="navbar">
-  <a class="navbar-brand" href="/">行政院即時新聞閱讀器</a>
+  <a class="navbar-brand" href="/">政府 API 閱讀器</a>
   <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,6 +17,9 @@
         <a class="nav-link" href="/auth/signup">註冊</a>
       </li>
       <% } %> <% if (user) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile/rain">即時雨量</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/profile/news">即時新聞</a>
       </li>

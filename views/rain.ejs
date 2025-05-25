@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/header") %>
+    <title>即時雨量</title>
+  </head>
+  <body>
+    <%- include ("partials/nav") %>
+    <main class="rain-main">
+      <h1>臺北市水利處雨量站即時資料</h1>
+      <% if (error) { %>
+      <p class="error"><%= error %>123456789</p>
+      <% } else if (rainData && rainData.length > 0) { %>
+      <table class="rain-table">
+        <thead>
+          <tr>
+            <th>站碼</th>
+            <th>站台名稱</th>
+            <th>雨量值 (mm)</th>
+            <th>記錄時間</th>
+          </tr>
+        </thead>
+        <!-- <tbody>
+          <% rainData.forEach(function(station) { %>
+          <tr>
+            <td><%= station.stationNo %></td>
+            <td><%= station.stationName %></td>
+            <td><%= station.rain %></td>
+            <td><%= station.recTime %></td>
+          </tr>
+          <% }) %>
+        </tbody> -->
+        <tbody>
+          <% rainData.forEach(function(station) { %>
+          <tr>
+            <td data-label="站碼"><%= station.stationNo %></td>
+            <td data-label="站台名稱"><%= station.stationName %></td>
+            <td data-label="雨量值 (mm)"><%= station.rain %></td>
+            <td data-label="記錄時間"><%= station.recTime %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <p>目前無雨量資料。</p>
+      <% } %>
+    </main>
+  </body>
+</html>
