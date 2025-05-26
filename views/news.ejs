@@ -7,27 +7,27 @@
   <body>
     <%- include ("partials/nav") %>
     <h1>行政院OpenAPI現在不能用啦...</h1>
-    <form
-      class="search-form"
-      action="/profile/news"
-      method="get"
-      style="margin-bottom: 2rem"
-    >
-      <input
-        type="text"
-        name="q"
-        class="search-input"
-        placeholder="搜尋文章標題或內容"
-        value="<%= typeof query !== 'undefined' ? query : '' %>"
-        autocomplete="off"
-      />
-      <button type="submit" class="search-btn">搜尋</button>
-    </form>
+
     <!-- 文章列表區塊 -->
     <% if (posts.length > 0) { %>
     <section class="posts-section">
       <h2 class="posts-title">本平台上的文章</h2>
-
+      <form
+        class="search-form"
+        action="/profile/news"
+        method="get"
+        style="margin-bottom: 2rem"
+      >
+        <input
+          type="text"
+          name="q"
+          class="search-input"
+          placeholder="搜尋文章標題或內容"
+          value="<%= typeof query !== 'undefined' ? query : '' %>"
+          autocomplete="off"
+        />
+        <button type="submit" class="search-btn">搜尋</button>
+      </form>
       <div class="posts-grid">
         <% for (let i = 0; i < posts.length; i++) { %>
         <article class="post-card">

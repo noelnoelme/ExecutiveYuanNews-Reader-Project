@@ -8,6 +8,22 @@
     <%- include ("partials/nav") %>
     <main class="rain-main">
       <h1>臺北市水利處雨量站即時資料</h1>
+      <form
+        class="search-form"
+        action="/profile/rain"
+        method="get"
+        style="margin-bottom: 2rem"
+      >
+        <input
+          type="text"
+          name="q"
+          class="search-input"
+          placeholder="搜尋站台名稱"
+          value="<%= typeof query !== 'undefined' ? query : '' %>"
+          autocomplete="off"
+        />
+        <button type="submit" class="search-btn">搜尋</button>
+      </form>
       <% if (error) { %>
       <p class="error"><%= error %>123456789</p>
       <% } else if (rainData && rainData.length > 0) { %>
@@ -20,29 +36,19 @@
             <th>記錄時間</th>
           </tr>
         </thead>
-        <!-- <tbody>
-          <% rainData.forEach(function(station) { %>
-          <tr>
-            <td><%= station.stationNo %></td>
-            <td><%= station.stationName %></td>
-            <td><%= station.rain %></td>
-            <td><%= station.recTime %></td>
-          </tr>
-          <% }) %>
-        </tbody> -->
         <tbody>
           <% rainData.forEach(function(station) { %>
           <tr>
             <td data-label="站碼"><%= station.stationNo %></td>
             <td data-label="站台名稱"><%= station.stationName %></td>
             <td data-label="雨量值 (mm)"><%= station.rain %></td>
-            <td data-label="記錄時間"><%= station.recTime %></td>
+            <td data-label="記錄時間"><%= station.formattedRecTime %></td>
           </tr>
           <% }) %>
         </tbody>
       </table>
       <% } else { %>
-      <p>目前無雨量資料。</p>
+      <p>查無雨量資料。</p>
       <% } %>
     </main>
   </body>

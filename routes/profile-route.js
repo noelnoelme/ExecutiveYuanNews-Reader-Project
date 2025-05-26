@@ -41,11 +41,45 @@ router.get("/rain", authCheck, async (req, res) => {
     const apiUrl =
       "https://wic.heo.taipei/OpenData/API/Rain/Get?stationNo=&loginId=open_rain&dataKey=85452C1D";
     const response = await axios.get(apiUrl);
-    // 假設回傳為 JSON 陣列
-    const rainData = response.data.data;
-    res.render("rain", { user: req.user, rainData: rainData, error: 0 });
+    let rainData = response.data.data;
+
+    // 取得搜尋關鍵字
+    const query = req.query.q ? req.query.q.trim() : "";
+
+    // 時間格式化
+    function formatRecTime(raw) {
+      if (!raw || raw.length !== 12) return raw;
+      const year = raw.slice(0, 4);
+      const month = raw.slice(4, 6);
+      const day = raw.slice(6, 8);
+      const hour = raw.slice(8, 10);
+      const min = raw.slice(10, 12);
+      return `${year}/${month}/${day} ${hour}:${min}`;
+    }
+
+    // 先格式化時間
+    rainData = rainData.map((station) => ({
+      ...station,
+      formattedRecTime: formatRecTime(station.recTime),
+    }));
+
+    // 如果有搜尋關鍵字，進行過濾（不分大小寫）
+    if (query) {
+      rainData = rainData.filter(
+        (station) =>
+          station.stationName &&
+          station.stationName.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+
+    res.render("rain", { user: req.user, rainData, error: 0, query });
   } catch (err) {
-    res.render("rain", { user: req.user, rainData: [], error: "資料取得失敗" });
+    res.render("rain", {
+      user: req.user,
+      rainData: [],
+      error: "資料取得失敗",
+      query: "",
+    });
   }
 });
 
