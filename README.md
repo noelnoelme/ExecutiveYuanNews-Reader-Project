@@ -3,7 +3,7 @@
 # 專案簡介
 
 > 本專案提供一個簡單的即時資訊閱讀平台，使用者可註冊、登入，並能發表個人筆記。
-> 適合 Node.js/Express/MongoDB/API 學習者參考與練習。
+> 適合 EJS/Node.js/Express/MongoDB/API 學習者參考與練習。
 
 ## 功能特色
 
